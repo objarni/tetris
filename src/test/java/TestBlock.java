@@ -1,10 +1,8 @@
-package tests;
-
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-import source.Block;
+import src.Block;
 import source.Location;
 
 import java.awt.*;

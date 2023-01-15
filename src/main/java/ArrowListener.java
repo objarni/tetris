@@ -1,5 +1,3 @@
-package source;
-
 public interface ArrowListener
 {
 	void upPressed();

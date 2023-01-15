@@ -1,4 +1,3 @@
-package source;
 /**
  * A <code>source.Location</code> object represents the row and column of a location
  * in a two-dimensional grid. <br />

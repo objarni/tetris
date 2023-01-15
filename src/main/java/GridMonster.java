@@ -1,5 +1,3 @@
-package source;
-
 import java.awt.Color;
 import java.util.ArrayList;
 
