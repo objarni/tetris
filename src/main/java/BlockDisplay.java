@@ -12,14 +12,11 @@ public class BlockDisplay implements KeyListener
 	private JFrame frame;
 	private ArrowListener listener;
 
-	// Constructs a new display for displaying the given board
 	public BlockDisplay(MyBoundedGrid<Block> board)
 	{
 		this.board = board;
 		grid = new JPanel[board.getNumRows()][board.getNumCols()];
 
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
         SwingUtilities.invokeLater(new Runnable()
         {
             public void run()
@@ -28,8 +25,7 @@ public class BlockDisplay implements KeyListener
             }
         });
 
-		//Wait until display has been drawn
-        try
+	    try
         {
         	while (frame == null || !frame.isVisible())
         		Thread.sleep(1);
@@ -41,21 +37,14 @@ public class BlockDisplay implements KeyListener
 		}
 	}
 
-    /**
-     * Create the GUI and show it.  For thread safety,
-     * this method should be invoked from the
-     * event-dispatching thread.
-     */
     private void createAndShowGUI()
     {
-        //Create and set up the window.
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(new GridLayout(board.getNumRows(), board.getNumCols()));
         frame.addKeyListener(this);
 
-		//Create each square component.
-        for (int row = 0; row < grid.length; row++)
+	    for (int row = 0; row < grid.length; row++)
         	for (int col = 0; col < grid[row].length; col++)
         	{
 				grid[row][col] = new JPanel();
@@ -64,15 +53,12 @@ public class BlockDisplay implements KeyListener
 				frame.getContentPane().add(grid[row][col]);
 			}
 
-		//Show the board
 		showBlocks();
 
-        //Display the window.
         frame.pack();
         frame.setVisible(true);
     }
 
-	//Redraws the board to include the pieces and border colors.
 	public void showBlocks()
 	{
 		for (int row = 0; row < grid.length; row++)
@@ -95,7 +81,6 @@ public class BlockDisplay implements KeyListener
 			}
 	}
 
-	// Sets the title of the window.
 	public void setTitle(String title)
 	{
 		frame.setTitle(title);
