@@ -1,25 +1,21 @@
-public class Location implements Comparable
-{
+public class Location implements Comparable {
     private int row;
     private int col;
-    public Location(int r, int c)
-    {
+
+    public Location(int r, int c) {
         row = r;
         col = c;
     }
 
-    public int getRow()
-    {
+    public int getRow() {
         return row;
     }
 
-    public int getCol()
-    {
+    public int getCol() {
         return col;
     }
 
-    public boolean equals(Object other)
-    {
+    public boolean equals(Object other) {
         if (!(other instanceof Location))
             return false;
 
@@ -27,13 +23,11 @@ public class Location implements Comparable
         return getRow() == otherLoc.getRow() && getCol() == otherLoc.getCol();
     }
 
-    public int hashCode()
-    {
+    public int hashCode() {
         return getRow() * 3737 + getCol();
     }
 
-    public int compareTo(Object other)
-    {
+    public int compareTo(Object other) {
         Location otherLoc = (Location) other;
         if (getRow() < otherLoc.getRow())
             return -1;
@@ -46,8 +40,7 @@ public class Location implements Comparable
         return 0;
     }
 
-    public String toString()
-    {
+    public String toString() {
         return "(" + getRow() + ", " + getCol() + ")";
     }
 }
