@@ -1,13 +1,13 @@
 import java.awt.Color;
 public class Tetrad
 {
-	private static int Locs1 = 0;
-	private static int Locs2 = 1;
-	private static int Locs3 = 2;
-	private static int Locs4 = 3;
-	private static int Locs5 = 4;
-	private static int Locs6 = 5;
-	private static int Locs7 = 6;
+	private static int Block1 = 0;
+	private static int Block2 = 1;
+	private static int Block3 = 2;
+	private static int Block4 = 3;
+	private static int Block5 = 4;
+	private static int Block6 = 5;
+	private static int Block7 = 6;
 
 	private Block[] blocks;
 	private MyBoundedGrid<Block> theGrid;
@@ -30,8 +30,7 @@ public class Tetrad
 
 		int randomNum = getRandom();
 
-		//locs1 = I
-		if(randomNum== Locs1)
+		if(randomNum== Block1)
 		{
 			p1.setColor(Color.RED);
 			p2.setColor(Color.RED);
@@ -42,8 +41,7 @@ public class Tetrad
 			locs[2] = new Location(2, 4);
 			locs[3] = new Location(3, 4);
 		}
-		//locs2 = T
-		if(randomNum == Locs2)
+		if(randomNum == Block2)
 		{
 			p1.setColor(Color.BLUE);
 			p2.setColor(Color.BLUE);
@@ -54,8 +52,8 @@ public class Tetrad
 			locs[2] = new Location(0, 5);
 			locs[3] = new Location(1, 4);
 		}
-		//locs3 = O
-		if(randomNum == Locs3)
+		
+		if(randomNum == Block3)
 		{
 			p1.setColor(Color.GREEN);
 			p2.setColor(Color.GREEN);
@@ -66,8 +64,8 @@ public class Tetrad
 			locs[2] = new Location(1, 4);
 			locs[3] = new Location(1, 5);
 		}
-		//locs4 = L
-		if(randomNum == Locs4)
+		
+		if(randomNum == Block4)
 		{
 			p1.setColor(Color.YELLOW);
 			p2.setColor(Color.YELLOW);
@@ -78,8 +76,8 @@ public class Tetrad
 			locs[2] = new Location(0, 4);
 			locs[3] = new Location(2, 5);
 		}
-		//locs5 = J
-		if(randomNum == Locs5)
+		
+		if(randomNum == Block5)
 		{
 			p1.setColor(Color.GRAY);
 			p2.setColor(Color.GRAY);
@@ -90,8 +88,8 @@ public class Tetrad
 			locs[2] = new Location(0, 5);
 			locs[3] = new Location(2, 4);
 		}
-		//locs6 = S
-		if(randomNum == Locs6)
+		
+		if(randomNum == Block6)
 		{
 			p1.setColor(Color.MAGENTA);
 			p2.setColor(Color.MAGENTA);
@@ -102,8 +100,8 @@ public class Tetrad
 			locs[2] = new Location(0, 4);
 			locs[3] = new Location(1, 3);
 		}
-		//locs7 = Z
-		if(randomNum == Locs7)
+		
+		if(randomNum == Block7)
 		{
 			p1.setColor(Color.CYAN);
 			p2.setColor(Color.CYAN);
