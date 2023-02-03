@@ -57,14 +57,6 @@ public class Tetris implements ArrowListener {
         }
     }
 
-    private int getLevel() {
-        return level;
-    }
-
-    private int getPoints() {
-        return points;
-    }
-
     private void clearCompletedRows() {
         for (int blockIndex = blocks.getNumRows(); blockIndex > -1; blockIndex--) {
             if (isCompletedRow(blockIndex)) {
