@@ -7,9 +7,9 @@ public class GridMonster {
 
         MyBoundedGrid<String> grid = new MyBoundedGrid<String>(2, 1);
 
-        if (grid.getNumRows() != 2)
+        if (grid.getNumberOfRows() != 2)
             throw new RuntimeException("getNumRows is dumb");
-        if (grid.getNumColumns() != 1)
+        if (grid.getNumberOfColumns() != 1)
             throw new RuntimeException("getNumColumns is dumb");
 
         System.out.println("Level 2:  testing if valid");
@@ -29,32 +29,32 @@ public class GridMonster {
 
         System.out.println("Level 3:  getting, putting, and removing");
 
-        Location loc = new Location(1, 0);
+        Location location = new Location(1, 0);
         String firstValue = "first";
         String secondValue = "second";
 
-        String value = grid.get(loc);
+        String value = grid.get(location);
         if (value != null)
             throw new RuntimeException("get is dumb");
-        value = grid.put(loc, firstValue);
+        value = grid.put(location, firstValue);
         if (value != null)
             throw new RuntimeException("put is dumb");
-        value = grid.get(loc);
+        value = grid.get(location);
         if (value != firstValue)
             throw new RuntimeException("put/get is dumb");
-        value = grid.put(loc, secondValue);
+        value = grid.put(location, secondValue);
         if (value != firstValue)
             throw new RuntimeException("put is dumb");
-        value = grid.get(loc);
+        value = grid.get(location);
         if (value != secondValue)
             throw new RuntimeException("put is dumb");
-        value = grid.remove(loc);
+        value = grid.remove(location);
         if (value != secondValue)
             throw new RuntimeException("remove is dumb");
-        value = grid.get(loc);
+        value = grid.get(location);
         if (value != null)
             throw new RuntimeException("remove is dumb");
-        value = grid.remove(loc);
+        value = grid.remove(location);
         if (value != null)
             throw new RuntimeException("remove is dumb");
 

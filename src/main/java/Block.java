@@ -33,15 +33,15 @@ public class Block {
         location = null;
     }
 
-    public void putSelfInGrid(MyBoundedGrid<Block> grid, Location loc) {
-        Block old = grid.get(loc);
+    public void putSelfInGrid(MyBoundedGrid<Block> grid, Location atLocation) {
+        Block old = grid.get(atLocation);
         if (old != null) {
             old.grid = null;
             old.location = null;
         }
         this.grid = grid;
-        location = loc;
-        grid.put(loc, this);
+        location = atLocation;
+        grid.put(atLocation, this);
     }
 
     public void moveTo(Location newLocation) {

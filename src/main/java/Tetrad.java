@@ -132,9 +132,9 @@ public class Tetrad {
         return oldBlocks;
     }
 
-    private boolean areEmpty(MyBoundedGrid<Block> grid, Location[] locs) {
-        for (int i = 0; i < locs.length; i++) {
-            if (!grid.isValid(locs[i]) || grid.get(locs[i]) != null) {
+    private boolean areEmpty(MyBoundedGrid<Block> grid, Location[] locations) {
+        for (int locationIndex = 0; locationIndex < locations.length; locationIndex++) {
+            if (!grid.isValid(locations[locationIndex]) || grid.get(locations[locationIndex]) != null) {
                 return false;
             }
         }
@@ -145,8 +145,8 @@ public class Tetrad {
         Location[] newLocations = new Location[4];
         for (int blockIndex = 0; blockIndex < blocks.length; blockIndex++) {
             int newRow = blocks[blockIndex].getLocation().getRow() + deltaRow;
-            int newCol = blocks[blockIndex].getLocation().getColumn() + deltaColumn;
-            Location newLocation = new Location(newRow, newCol);
+            int newColumn = blocks[blockIndex].getLocation().getColumn() + deltaColumn;
+            Location newLocation = new Location(newRow, newColumn);
             newLocations[blockIndex] = newLocation;
         }
         Location[] oldLocations = removeBlocks();
@@ -163,8 +163,8 @@ public class Tetrad {
         Location[] newLocations = new Location[4];
         for (int blockIndex = 0; blockIndex < blocks.length; blockIndex++) {
             int newRow = blocks[0].getLocation().getRow() - blocks[0].getLocation().getColumn() + blocks[blockIndex].getLocation().getColumn();
-            int newCol = blocks[0].getLocation().getColumn() + blocks[0].getLocation().getRow() - blocks[blockIndex].getLocation().getRow();
-            Location newLocation = new Location(newRow, newCol);
+            int newColumn = blocks[0].getLocation().getColumn() + blocks[0].getLocation().getRow() - blocks[blockIndex].getLocation().getRow();
+            Location newLocation = new Location(newRow, newColumn);
             newLocations[blockIndex] = newLocation;
         }
         Location[] oldLocations = removeBlocks();
@@ -176,6 +176,4 @@ public class Tetrad {
             return false;
         }
     }
-
-
 }

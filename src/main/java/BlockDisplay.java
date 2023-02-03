@@ -13,7 +13,7 @@ public class BlockDisplay implements KeyListener {
 
     public BlockDisplay(MyBoundedGrid<Block> board) {
         this.board = board;
-        grid = new JPanel[board.getNumRows()][board.getNumColumns()];
+        grid = new JPanel[board.getNumberOfRows()][board.getNumberOfColumns()];
 
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
@@ -33,7 +33,7 @@ public class BlockDisplay implements KeyListener {
     private void createAndShowGUI() {
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().setLayout(new GridLayout(board.getNumRows(), board.getNumColumns()));
+        frame.getContentPane().setLayout(new GridLayout(board.getNumberOfRows(), board.getNumberOfColumns()));
         frame.addKeyListener(this);
 
         for (int row = 0; row < grid.length; row++)

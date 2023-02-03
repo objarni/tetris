@@ -2,9 +2,9 @@ public class Location implements Comparable {
     private int row;
     private int column;
 
-    public Location(int r, int c) {
-        row = r;
-        column = c;
+    public Location(int atRow, int atColumn) {
+        row = atRow;
+        column = atColumn;
     }
 
     public int getRow() {

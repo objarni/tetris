@@ -58,7 +58,7 @@ public class Tetris implements ArrowListener {
     }
 
     private void clearCompletedRows() {
-        for (int blockIndex = blocks.getNumRows(); blockIndex > -1; blockIndex--) {
+        for (int blockIndex = blocks.getNumberOfRows(); blockIndex > -1; blockIndex--) {
             if (isCompletedRow(blockIndex)) {
                 clearRow(blockIndex);
                 rowsCompletedSet++;
@@ -80,28 +80,28 @@ public class Tetris implements ArrowListener {
     }
 
     private boolean isCompletedRow(int row) {
-        for (int i = 0; i < blocks.getNumColumns(); i++) {
-            Location loc = new Location(row, i);
-            if (blocks.get(loc) == null) {
+        for (int column = 0; column < blocks.getNumberOfColumns(); column++) {
+            Location location = new Location(row, column);
+            if (blocks.get(location) == null) {
                 return false;
             }
         }
         return true;
     }
 
-    private void clearRow(int row) {
-        for (int i = 0; i < blocks.getNumColumns(); i++) {
-            Location loc = new Location(row, i);
-            if (blocks.get(loc) != null) {
-                blocks.get(loc).removeSelfFromGrid();
+    private void clearRow(int rowToClear) {
+        for (int column = 0; column < blocks.getNumberOfColumns(); column++) {
+            Location location = new Location(rowToClear, column);
+            if (blocks.get(location) != null) {
+                blocks.get(location).removeSelfFromGrid();
             }
         }
-        for (int i = row - 1; i > -1; i--) {
-            for (int j = 0; j < blocks.getNumColumns(); j++) {
-                Location loc = new Location(i, j);
-                Location next = new Location(i + 1, j);
-                if (blocks.get(loc) != null) {
-                    blocks.get(loc).moveTo(next);
+        for (int row = rowToClear - 1; row > -1; row--) {
+            for (int column = 0; column < blocks.getNumberOfColumns(); column++) {
+                Location location = new Location(row, column);
+                Location nextLocation = new Location(row + 1, column);
+                if (blocks.get(location) != null) {
+                    blocks.get(location).moveTo(nextLocation);
                 }
             }
         }
