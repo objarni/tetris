@@ -1,5 +1,4 @@
 public class Tetris implements ArrowListener {
-    //need to fix level; show next tetrad
     MyBoundedGrid<Block> blocks;
     BlockDisplay display;
     Tetrad activeTetrad;
