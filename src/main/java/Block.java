@@ -6,7 +6,6 @@ public class Block
     private Location location;
     private Color color;
 
-    //constructs a blue block, because blue is the greatest color ever!
     public Block()
     {
         color = Color.BLUE;
@@ -24,20 +23,16 @@ public class Block
         color = newColor;
     }
 
-    //gets the grid of this block, or null if this block is not contained in a grid
     public MyBoundedGrid<Block> getGrid()
     {
         return grid;
     }
 
-	//gets the location of this block, or null if this block is not contained in a grid
     public Location getLocation()
     {
         return location;
     }
 
-	//removes this block from its grid
-	//precondition:  this block is contained in a grid
     public void removeSelfFromGrid()
     {
 		grid.remove(location);
@@ -45,10 +40,6 @@ public class Block
         location = null;
     }
 
-	//puts this block into location loc of grid
-	//if there is another block at loc, it is removed
-	//precondition:  (1) this block is not contained in a grid
-	//               (2) loc is valid in gr
     public void putSelfInGrid(MyBoundedGrid<Block> grid, Location loc)
     {
 		Block old = grid.get(loc);
@@ -62,10 +53,6 @@ public class Block
         grid.put(loc, this);
     }
 
-	//moves this block to newLocation
-	//if there is another block at newLocation, it is removed
-	//precondition:  (1) this block is contained in a grid
-	//               (2) newLocation is valid in the grid of this block
     public void moveTo(Location newLocation)
     {
 		Location oldLocation = location;
@@ -75,7 +62,6 @@ public class Block
 
     }
 
-	//returns a string with the location and color of this block
     public String toString()
     {
         return "source.Block[location=" + location + ",color=" + color + "]";
