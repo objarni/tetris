@@ -16,118 +16,118 @@ public class Tetrad {
         blocks = new Block[4];
         theGrid = grid;
 
-        Location[] locs = new Location[4];
+        Location[] locations = new Location[4];
 
-        Block p1 = new Block();
-        Block p2 = new Block();
-        Block p3 = new Block();
-        Block p4 = new Block();
+        Block block1 = new Block();
+        Block block2 = new Block();
+        Block block3 = new Block();
+        Block block4 = new Block();
 
-        blocks[0] = p1;
-        blocks[1] = p2;
-        blocks[2] = p3;
-        blocks[3] = p4;
+        blocks[0] = block1;
+        blocks[1] = block2;
+        blocks[2] = block3;
+        blocks[3] = block4;
 
-        int randomNum = getRandom();
+        int randomNumber = getRandom();
 
-        if (randomNum == Block1) {
-            p1.setColor(Color.RED);
-            p2.setColor(Color.RED);
-            p3.setColor(Color.RED);
-            p4.setColor(Color.RED);
-            locs[0] = new Location(1, 4);
-            locs[1] = new Location(0, 4);
-            locs[2] = new Location(2, 4);
-            locs[3] = new Location(3, 4);
+        if (randomNumber == Block1) {
+            block1.setColor(Color.RED);
+            block2.setColor(Color.RED);
+            block3.setColor(Color.RED);
+            block4.setColor(Color.RED);
+            locations[0] = new Location(1, 4);
+            locations[1] = new Location(0, 4);
+            locations[2] = new Location(2, 4);
+            locations[3] = new Location(3, 4);
         }
-        if (randomNum == Block2) {
-            p1.setColor(Color.BLUE);
-            p2.setColor(Color.BLUE);
-            p3.setColor(Color.BLUE);
-            p4.setColor(Color.BLUE);
-            locs[0] = new Location(0, 4);
-            locs[1] = new Location(0, 3);
-            locs[2] = new Location(0, 5);
-            locs[3] = new Location(1, 4);
-        }
-
-        if (randomNum == Block3) {
-            p1.setColor(Color.GREEN);
-            p2.setColor(Color.GREEN);
-            p3.setColor(Color.GREEN);
-            p4.setColor(Color.GREEN);
-            locs[0] = new Location(0, 4);
-            locs[1] = new Location(0, 5);
-            locs[2] = new Location(1, 4);
-            locs[3] = new Location(1, 5);
+        if (randomNumber == Block2) {
+            block1.setColor(Color.BLUE);
+            block2.setColor(Color.BLUE);
+            block3.setColor(Color.BLUE);
+            block4.setColor(Color.BLUE);
+            locations[0] = new Location(0, 4);
+            locations[1] = new Location(0, 3);
+            locations[2] = new Location(0, 5);
+            locations[3] = new Location(1, 4);
         }
 
-        if (randomNum == Block4) {
-            p1.setColor(Color.YELLOW);
-            p2.setColor(Color.YELLOW);
-            p3.setColor(Color.YELLOW);
-            p4.setColor(Color.YELLOW);
-            locs[0] = new Location(2, 4);
-            locs[1] = new Location(1, 4);
-            locs[2] = new Location(0, 4);
-            locs[3] = new Location(2, 5);
+        if (randomNumber == Block3) {
+            block1.setColor(Color.GREEN);
+            block2.setColor(Color.GREEN);
+            block3.setColor(Color.GREEN);
+            block4.setColor(Color.GREEN);
+            locations[0] = new Location(0, 4);
+            locations[1] = new Location(0, 5);
+            locations[2] = new Location(1, 4);
+            locations[3] = new Location(1, 5);
         }
 
-        if (randomNum == Block5) {
-            p1.setColor(Color.GRAY);
-            p2.setColor(Color.GRAY);
-            p3.setColor(Color.GRAY);
-            p4.setColor(Color.GRAY);
-            locs[0] = new Location(2, 5);
-            locs[1] = new Location(1, 5);
-            locs[2] = new Location(0, 5);
-            locs[3] = new Location(2, 4);
+        if (randomNumber == Block4) {
+            block1.setColor(Color.YELLOW);
+            block2.setColor(Color.YELLOW);
+            block3.setColor(Color.YELLOW);
+            block4.setColor(Color.YELLOW);
+            locations[0] = new Location(2, 4);
+            locations[1] = new Location(1, 4);
+            locations[2] = new Location(0, 4);
+            locations[3] = new Location(2, 5);
         }
 
-        if (randomNum == Block6) {
-            p1.setColor(Color.MAGENTA);
-            p2.setColor(Color.MAGENTA);
-            p3.setColor(Color.MAGENTA);
-            p4.setColor(Color.MAGENTA);
-            locs[0] = new Location(1, 4);
-            locs[1] = new Location(0, 5);
-            locs[2] = new Location(0, 4);
-            locs[3] = new Location(1, 3);
+        if (randomNumber == Block5) {
+            block1.setColor(Color.GRAY);
+            block2.setColor(Color.GRAY);
+            block3.setColor(Color.GRAY);
+            block4.setColor(Color.GRAY);
+            locations[0] = new Location(2, 5);
+            locations[1] = new Location(1, 5);
+            locations[2] = new Location(0, 5);
+            locations[3] = new Location(2, 4);
         }
 
-        if (randomNum == Block7) {
-            p1.setColor(Color.CYAN);
-            p2.setColor(Color.CYAN);
-            p3.setColor(Color.CYAN);
-            p4.setColor(Color.CYAN);
-            locs[0] = new Location(0, 4);
-            locs[1] = new Location(0, 3);
-            locs[2] = new Location(1, 4);
-            locs[3] = new Location(1, 5);
+        if (randomNumber == Block6) {
+            block1.setColor(Color.MAGENTA);
+            block2.setColor(Color.MAGENTA);
+            block3.setColor(Color.MAGENTA);
+            block4.setColor(Color.MAGENTA);
+            locations[0] = new Location(1, 4);
+            locations[1] = new Location(0, 5);
+            locations[2] = new Location(0, 4);
+            locations[3] = new Location(1, 3);
         }
-        addToLocations(grid, locs);
+
+        if (randomNumber == Block7) {
+            block1.setColor(Color.CYAN);
+            block2.setColor(Color.CYAN);
+            block3.setColor(Color.CYAN);
+            block4.setColor(Color.CYAN);
+            locations[0] = new Location(0, 4);
+            locations[1] = new Location(0, 3);
+            locations[2] = new Location(1, 4);
+            locations[3] = new Location(1, 5);
+        }
+        addToLocations(grid, locations);
 
     }
 
-    private void addToLocations(MyBoundedGrid<Block> grid, Location[] locs) {
-        for (int i = 0; i < blocks.length; i++) {
-            blocks[i].putSelfInGrid(grid, locs[i]);
+    private void addToLocations(MyBoundedGrid<Block> grid, Location[] locations) {
+        for (int blockIndex = 0; blockIndex < blocks.length; blockIndex++) {
+            blocks[blockIndex].putSelfInGrid(grid, locations[blockIndex]);
         }
 
     }
 
     private int getRandom() {
-        int i = (int) (Math.random() * 7);
-        return i;
+        int randomNumber = (int) (Math.random() * 7);
+        return randomNumber;
     }
 
     private Location[] removeBlocks() {
         Location[] oldBlocks = new Location[blocks.length];
-        for (int i = 0; i < blocks.length; i++) {
-            oldBlocks[i] = blocks[i].getLocation();
+        for (int blockIndex = 0; blockIndex < blocks.length; blockIndex++) {
+            oldBlocks[blockIndex] = blocks[blockIndex].getLocation();
         }
-        for (int i = 0; i < blocks.length; i++) {
-            blocks[i].removeSelfFromGrid();
+        for (int blockIndex = 0; blockIndex < blocks.length; blockIndex++) {
+            blocks[blockIndex].removeSelfFromGrid();
         }
         return oldBlocks;
     }
@@ -141,47 +141,47 @@ public class Tetrad {
         return true;
     }
 
-    public boolean isIn(Location loc, Block[] blocks) {
-        for (int i = 0; i < blocks.length; i++) {
-            if (loc == blocks[i].getLocation()) {
+    public boolean isIn(Location location, Block[] blocks) {
+        for (int blockIndex = 0; blockIndex < blocks.length; blockIndex++) {
+            if (location == blocks[blockIndex].getLocation()) {
                 return true;
             }
         }
         return false;
     }
 
-    public boolean translate(int deltaRow, int deltaCol) {
-        Location[] nextPosition = new Location[4];
-        for (int i = 0; i < blocks.length; i++) {
-            int newRow = blocks[i].getLocation().getRow() + deltaRow;
-            int newCol = blocks[i].getLocation().getCol() + deltaCol;
+    public boolean translate(int deltaRow, int deltaColumn) {
+        Location[] newLocations = new Location[4];
+        for (int blockIndex = 0; blockIndex < blocks.length; blockIndex++) {
+            int newRow = blocks[blockIndex].getLocation().getRow() + deltaRow;
+            int newCol = blocks[blockIndex].getLocation().getCol() + deltaColumn;
             Location newLocation = new Location(newRow, newCol);
-            nextPosition[i] = newLocation;
+            newLocations[blockIndex] = newLocation;
         }
-        Location[] oldPosition = removeBlocks();
-        if (areEmpty(theGrid, nextPosition)) {
-            addToLocations(theGrid, nextPosition);
+        Location[] oldLocations = removeBlocks();
+        if (areEmpty(theGrid, newLocations)) {
+            addToLocations(theGrid, newLocations);
             return true;
         } else {
-            addToLocations(theGrid, oldPosition);
+            addToLocations(theGrid, oldLocations);
             return false;
         }
     }
 
     public boolean rotate() {
-        Location[] nextPosition = new Location[4];
-        for (int i = 0; i < blocks.length; i++) {
-            int newRow = blocks[0].getLocation().getRow() - blocks[0].getLocation().getCol() + blocks[i].getLocation().getCol();
-            int newCol = blocks[0].getLocation().getCol() + blocks[0].getLocation().getRow() - blocks[i].getLocation().getRow();
+        Location[] newLocations = new Location[4];
+        for (int blockIndex = 0; blockIndex < blocks.length; blockIndex++) {
+            int newRow = blocks[0].getLocation().getRow() - blocks[0].getLocation().getCol() + blocks[blockIndex].getLocation().getCol();
+            int newCol = blocks[0].getLocation().getCol() + blocks[0].getLocation().getRow() - blocks[blockIndex].getLocation().getRow();
             Location newLocation = new Location(newRow, newCol);
-            nextPosition[i] = newLocation;
+            newLocations[blockIndex] = newLocation;
         }
-        Location[] oldPosition = removeBlocks();
-        if (areEmpty(theGrid, nextPosition)) {
-            addToLocations(theGrid, nextPosition);
+        Location[] oldLocations = removeBlocks();
+        if (areEmpty(theGrid, newLocations)) {
+            addToLocations(theGrid, newLocations);
             return true;
         } else {
-            addToLocations(theGrid, oldPosition);
+            addToLocations(theGrid, oldLocations);
             return false;
         }
     }
