@@ -66,9 +66,9 @@ public class Tetris implements ArrowListener {
     }
 
     private void clearCompletedRows() {
-        for (int i = blocks.getNumRows(); i > -1; i--) {
-            if (isCompletedRow(i)) {
-                clearRow(i);
+        for (int blockIndex = blocks.getNumRows(); blockIndex > -1; blockIndex--) {
+            if (isCompletedRow(blockIndex)) {
+                clearRow(blockIndex);
                 rowsCompletedSet++;
                 totalRowsCompleted++;
                 if (rowsCompletedSet == 1) {

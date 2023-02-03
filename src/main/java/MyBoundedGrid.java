@@ -16,40 +16,40 @@ public class MyBoundedGrid<E> {
     }
 
     public boolean isValid(Location location) {
-        if (location.getRow() < getNumRows() && location.getCol() < getNumColumns() && location.getRow() >= 0 && location.getCol() >= 0) {
+        if (location.getRow() < getNumRows() && location.getColumn() < getNumColumns() && location.getRow() >= 0 && location.getColumn() >= 0) {
             return true;
         } else return false;
     }
 
-    public E get(Location loc) {
-        for (int i = 0; i < getNumRows(); i++) {
-            for (int j = 0; j < getNumColumns(); j++) {
-                if (i == loc.getRow() && j == loc.getCol()) {
-                    return (E) occupantArray[i][j];
+    public E get(Location location) {
+        for (int row = 0; row < getNumRows(); row++) {
+            for (int column = 0; column < getNumColumns(); column++) {
+                if (row == location.getRow() && column == location.getColumn()) {
+                    return (E) occupantArray[row][column];
                 }
             }
         }
         return null;
     }
 
-    public E put(Location loc, E obj) {
-        Object former = get(loc);
-        for (int i = 0; i < getNumRows(); i++) {
-            for (int j = 0; j < getNumColumns(); j++) {
-                if (i == loc.getRow() && j == loc.getCol()) {
-                    occupantArray[i][j] = obj;
+    public E put(Location location, E element) {
+        Object former = get(location);
+        for (int row = 0; row < getNumRows(); row++) {
+            for (int column = 0; column < getNumColumns(); column++) {
+                if (row == location.getRow() && column == location.getColumn()) {
+                    occupantArray[row][column] = element;
                 }
             }
         }
         return (E) former;
     }
 
-    public E remove(Location loc) {
-        for (int i = 0; i < getNumRows(); i++) {
-            for (int j = 0; j < getNumColumns(); j++) {
-                if (i == loc.getRow() && j == loc.getCol()) {
-                    Object former = occupantArray[i][j];
-                    occupantArray[i][j] = null;
+    public E remove(Location location) {
+        for (int row = 0; row < getNumRows(); row++) {
+            for (int column = 0; column < getNumColumns(); column++) {
+                if (row == location.getRow() && column == location.getColumn()) {
+                    Object former = occupantArray[row][column];
+                    occupantArray[row][column] = null;
                     return (E) former;
                 }
             }
@@ -59,11 +59,11 @@ public class MyBoundedGrid<E> {
 
     public ArrayList<Location> getOccupiedLocations() {
         ArrayList<Location> locations = new ArrayList<Location>();
-        for (int i = 0; i < getNumRows(); i++) {
-            for (int j = 0; j < getNumColumns(); j++) {
-                Location loc = new Location(i, j);
-                if (get(loc) != null) {
-                    locations.add(loc);
+        for (int row = 0; row < getNumRows(); row++) {
+            for (int column = 0; column < getNumColumns(); column++) {
+                Location location = new Location(row, column);
+                if (get(location) != null) {
+                    locations.add(location);
                 }
             }
         }

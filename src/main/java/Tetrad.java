@@ -154,7 +154,7 @@ public class Tetrad {
         Location[] newLocations = new Location[4];
         for (int blockIndex = 0; blockIndex < blocks.length; blockIndex++) {
             int newRow = blocks[blockIndex].getLocation().getRow() + deltaRow;
-            int newCol = blocks[blockIndex].getLocation().getCol() + deltaColumn;
+            int newCol = blocks[blockIndex].getLocation().getColumn() + deltaColumn;
             Location newLocation = new Location(newRow, newCol);
             newLocations[blockIndex] = newLocation;
         }
@@ -171,8 +171,8 @@ public class Tetrad {
     public boolean rotate() {
         Location[] newLocations = new Location[4];
         for (int blockIndex = 0; blockIndex < blocks.length; blockIndex++) {
-            int newRow = blocks[0].getLocation().getRow() - blocks[0].getLocation().getCol() + blocks[blockIndex].getLocation().getCol();
-            int newCol = blocks[0].getLocation().getCol() + blocks[0].getLocation().getRow() - blocks[blockIndex].getLocation().getRow();
+            int newRow = blocks[0].getLocation().getRow() - blocks[0].getLocation().getColumn() + blocks[blockIndex].getLocation().getColumn();
+            int newCol = blocks[0].getLocation().getColumn() + blocks[0].getLocation().getRow() - blocks[blockIndex].getLocation().getRow();
             Location newLocation = new Location(newRow, newCol);
             newLocations[blockIndex] = newLocation;
         }

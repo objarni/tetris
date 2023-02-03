@@ -1,30 +1,30 @@
 public class Location implements Comparable {
     private int row;
-    private int col;
+    private int column;
 
     public Location(int r, int c) {
         row = r;
-        col = c;
+        column = c;
     }
 
     public int getRow() {
         return row;
     }
 
-    public int getCol() {
-        return col;
+    public int getColumn() {
+        return column;
     }
 
     public boolean equals(Object other) {
         if (!(other instanceof Location))
             return false;
 
-        Location otherLoc = (Location) other;
-        return getRow() == otherLoc.getRow() && getCol() == otherLoc.getCol();
+        Location otherLocation = (Location) other;
+        return getRow() == otherLocation.getRow() && getColumn() == otherLocation.getColumn();
     }
 
     public int hashCode() {
-        return getRow() * 3737 + getCol();
+        return getRow() * 3737 + getColumn();
     }
 
     public int compareTo(Object other) {
@@ -33,14 +33,14 @@ public class Location implements Comparable {
             return -1;
         if (getRow() > otherLoc.getRow())
             return 1;
-        if (getCol() < otherLoc.getCol())
+        if (getColumn() < otherLoc.getColumn())
             return -1;
-        if (getCol() > otherLoc.getCol())
+        if (getColumn() > otherLoc.getColumn())
             return 1;
         return 0;
     }
 
     public String toString() {
-        return "(" + getRow() + ", " + getCol() + ")";
+        return "(" + getRow() + ", " + getColumn() + ")";
     }
 }
