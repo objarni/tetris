@@ -2,7 +2,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-// Used to display the contents of a game board
 public class BlockDisplay implements KeyListener
 {
 	private static final Color BACKGROUND = Color.WHITE;
@@ -30,9 +29,9 @@ public class BlockDisplay implements KeyListener
         	while (frame == null || !frame.isVisible())
         		Thread.sleep(1);
 		}
-		catch(InterruptedException e)
+		catch(InterruptedException exception)
 		{
-			e.printStackTrace();
+			exception.printStackTrace();
 			System.exit(1);
 		}
 	}
@@ -45,12 +44,12 @@ public class BlockDisplay implements KeyListener
         frame.addKeyListener(this);
 
 	    for (int row = 0; row < grid.length; row++)
-        	for (int col = 0; col < grid[row].length; col++)
+        	for (int column = 0; column < grid[row].length; column++)
         	{
-				grid[row][col] = new JPanel();
-				grid[row][col].setBackground(BACKGROUND);
-				grid[row][col].setPreferredSize(new Dimension(20, 20));
-				frame.getContentPane().add(grid[row][col]);
+				grid[row][column] = new JPanel();
+				grid[row][column].setBackground(BACKGROUND);
+				grid[row][column].setPreferredSize(new Dimension(20, 20));
+				frame.getContentPane().add(grid[row][column]);
 			}
 
 		showBlocks();
@@ -62,21 +61,21 @@ public class BlockDisplay implements KeyListener
 	public void showBlocks()
 	{
 		for (int row = 0; row < grid.length; row++)
-			for (int col = 0; col < grid[row].length; col++)
+			for (int column = 0; column < grid[row].length; column++)
 			{
-				Location loc = new Location(row, col);
+				Location location = new Location(row, column);
 
-				Block square = board.get(loc);
+				Block square = board.get(location);
 
 				if (square == null)
 				{
-					grid[row][col].setBackground(BACKGROUND);
-					grid[row][col].setBorder(null);
+					grid[row][column].setBackground(BACKGROUND);
+					grid[row][column].setBorder(null);
 				}
 				else
 				{
-					grid[row][col].setBackground(square.getColor());
-					grid[row][col].setBorder(BorderFactory.createLineBorder(BACKGROUND));
+					grid[row][column].setBackground(square.getColor());
+					grid[row][column].setBorder(BorderFactory.createLineBorder(BACKGROUND));
 				}
 			}
 	}
@@ -86,19 +85,19 @@ public class BlockDisplay implements KeyListener
 		frame.setTitle(title);
 	}
 
-	public void keyTyped(KeyEvent e)
+	public void keyTyped(KeyEvent event)
 	{
 	}
 
-	public void keyReleased(KeyEvent e)
+	public void keyReleased(KeyEvent event)
 	{
 	}
 
-	public void keyPressed(KeyEvent e)
+	public void keyPressed(KeyEvent event)
 	{
 		if (listener == null)
 			return;
-		int code = e.getKeyCode();
+		int code = event.getKeyCode();
 		if (code == KeyEvent.VK_LEFT)
 			listener.leftPressed();
 		else if (code == KeyEvent.VK_RIGHT)
