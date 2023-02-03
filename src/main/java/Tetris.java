@@ -1,5 +1,5 @@
 public class Tetris implements ArrowListener {
-    MyBoundedGrid<Block> blocks;
+    MyBoundedGrid<Block> grid;
     BlockDisplay display;
     Tetrad activeTetrad;
     int points;
@@ -9,15 +9,15 @@ public class Tetris implements ArrowListener {
     int totalRowsCompleted;
 
     public Tetris() {
-        blocks = new MyBoundedGrid<Block>(30, 20);
-        display = new BlockDisplay(blocks);
+        grid = new MyBoundedGrid<Block>(30, 20);
+        display = new BlockDisplay(grid);
         display.setArrowListener(this);
         points = 0;
         totalRowsCompleted = 0;
         level = 1;
         speed = 1000;
         rowsCompletedSet = 0;
-        activeTetrad = new Tetrad(blocks);
+        activeTetrad = new Tetrad(grid);
     }
 
     public static void main(String[] args) {
@@ -43,7 +43,7 @@ public class Tetris implements ArrowListener {
                         totalRowsCompleted = 0;
                     }
                     display.setTitle("source.Tetris-- Level: " + level + "  Score: " + points);
-                    activeTetrad = new Tetrad(blocks);
+                    activeTetrad = new Tetrad(grid);
                     if (activeTetrad.translate(1, 0) == false) {
                         lost = true;
                         display.setArrowListener(null);
@@ -58,9 +58,9 @@ public class Tetris implements ArrowListener {
     }
 
     private void clearCompletedRows() {
-        for (int blockIndex = blocks.getNumberOfRows(); blockIndex > -1; blockIndex--) {
-            if (isCompletedRow(blockIndex)) {
-                clearRow(blockIndex);
+        for (int row = grid.getNumberOfRows(); row > -1; row--) {
+            if (isCompletedRow(row)) {
+                clearRow(row);
                 rowsCompletedSet++;
                 totalRowsCompleted++;
                 if (rowsCompletedSet == 1) {
@@ -80,9 +80,9 @@ public class Tetris implements ArrowListener {
     }
 
     private boolean isCompletedRow(int row) {
-        for (int column = 0; column < blocks.getNumberOfColumns(); column++) {
+        for (int column = 0; column < grid.getNumberOfColumns(); column++) {
             Location location = new Location(row, column);
-            if (blocks.get(location) == null) {
+            if (grid.get(location) == null) {
                 return false;
             }
         }
@@ -90,18 +90,18 @@ public class Tetris implements ArrowListener {
     }
 
     private void clearRow(int rowToClear) {
-        for (int column = 0; column < blocks.getNumberOfColumns(); column++) {
+        for (int column = 0; column < grid.getNumberOfColumns(); column++) {
             Location location = new Location(rowToClear, column);
-            if (blocks.get(location) != null) {
-                blocks.get(location).removeSelfFromGrid();
+            if (grid.get(location) != null) {
+                grid.get(location).removeSelfFromGrid();
             }
         }
         for (int row = rowToClear - 1; row > -1; row--) {
-            for (int column = 0; column < blocks.getNumberOfColumns(); column++) {
+            for (int column = 0; column < grid.getNumberOfColumns(); column++) {
                 Location location = new Location(row, column);
                 Location nextLocation = new Location(row + 1, column);
-                if (blocks.get(location) != null) {
-                    blocks.get(location).moveTo(nextLocation);
+                if (grid.get(location) != null) {
+                    grid.get(location).moveTo(nextLocation);
                 }
             }
         }
