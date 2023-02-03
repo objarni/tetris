@@ -14,7 +14,7 @@ public class BlockDisplay implements KeyListener
 	public BlockDisplay(MyBoundedGrid<Block> board)
 	{
 		this.board = board;
-		grid = new JPanel[board.getNumRows()][board.getNumCols()];
+		grid = new JPanel[board.getNumRows()][board.getNumColumns()];
 
         SwingUtilities.invokeLater(new Runnable()
         {
@@ -40,7 +40,7 @@ public class BlockDisplay implements KeyListener
     {
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().setLayout(new GridLayout(board.getNumRows(), board.getNumCols()));
+        frame.getContentPane().setLayout(new GridLayout(board.getNumRows(), board.getNumColumns()));
         frame.addKeyListener(this);
 
 	    for (int row = 0; row < grid.length; row++)

@@ -103,7 +103,7 @@ public class Tetris implements ArrowListener
 	}
 	private boolean isCompletedRow(int row)
 	{
-		for(int i=0; i< blocks.getNumCols(); i++)
+		for(int i = 0; i< blocks.getNumColumns(); i++)
 		{
 			Location loc = new Location(row, i);
 			if( blocks.get(loc) == null)
@@ -115,7 +115,7 @@ public class Tetris implements ArrowListener
 	}
 	private void clearRow(int row)
 	{
-		for(int i =0; i< blocks.getNumCols(); i++)
+		for(int i = 0; i< blocks.getNumColumns(); i++)
 		{
 			Location loc = new Location(row, i);
 			if(blocks.get(loc) != null)
@@ -125,7 +125,7 @@ public class Tetris implements ArrowListener
 		}
 		for(int i = row-1; i> -1; i--)
 		{
-			for(int j=0; j< blocks.getNumCols(); j++)
+			for(int j = 0; j< blocks.getNumColumns(); j++)
 			{
 				Location loc = new Location(i, j);
 				Location next = new Location(i+1, j);

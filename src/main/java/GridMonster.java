@@ -11,8 +11,8 @@ public class GridMonster
 
 		if (grid.getNumRows() != 2)
 			throw new RuntimeException("getNumRows is dumb");
-		if (grid.getNumCols() != 1)
-			throw new RuntimeException("getNumCols is dumb");
+		if (grid.getNumColumns() != 1)
+			throw new RuntimeException("getNumColumns is dumb");
 
 		System.out.println("Level 2:  testing if valid");
 
