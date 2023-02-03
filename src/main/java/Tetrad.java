@@ -141,15 +141,6 @@ public class Tetrad {
         return true;
     }
 
-    public boolean isIn(Location location, Block[] blocks) {
-        for (int blockIndex = 0; blockIndex < blocks.length; blockIndex++) {
-            if (location == blocks[blockIndex].getLocation()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public boolean translate(int deltaRow, int deltaColumn) {
         Location[] newLocations = new Location[4];
         for (int blockIndex = 0; blockIndex < blocks.length; blockIndex++) {
