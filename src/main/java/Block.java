@@ -14,13 +14,11 @@ public class Block
         location = null;
     }
 
-    //gets the color of this block
     public Color getColor()
     {
         return color;
     }
 
-    //gets the color of this block to newColor.
     public void setColor(Color newColor)
     {
         color = newColor;
@@ -47,21 +45,21 @@ public class Block
         location = null;
     }
 
-	//puts this block into location loc of grid gr
+	//puts this block into location loc of grid
 	//if there is another block at loc, it is removed
 	//precondition:  (1) this block is not contained in a grid
 	//               (2) loc is valid in gr
-    public void putSelfInGrid(MyBoundedGrid<Block> gr, Location loc)
+    public void putSelfInGrid(MyBoundedGrid<Block> grid, Location loc)
     {
-		Block old = gr.get(loc);
+		Block old = grid.get(loc);
 		if(old != null)
 		{
 			old.grid = null;
 			old.location = null;
 		}
-		grid = gr;
+		this.grid = grid;
 		location = loc;
-        gr.put(loc, this);
+        grid.put(loc, this);
     }
 
 	//moves this block to newLocation
