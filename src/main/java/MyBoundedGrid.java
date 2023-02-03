@@ -15,8 +15,8 @@ public class MyBoundedGrid<E> {
         return occupantArray[1].length;
     }
 
-    public boolean isValid(Location loc) {
-        if (loc.getRow() < getNumRows() && loc.getCol() < getNumColumns() && loc.getRow() >= 0 && loc.getCol() >= 0) {
+    public boolean isValid(Location location) {
+        if (location.getRow() < getNumRows() && location.getCol() < getNumColumns() && location.getRow() >= 0 && location.getCol() >= 0) {
             return true;
         } else return false;
     }
