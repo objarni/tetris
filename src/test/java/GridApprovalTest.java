@@ -1,13 +1,26 @@
 import org.approvaltests.Approvals;
 import org.junit.jupiter.api.Test;
 
+import java.awt.*;
+import java.util.List;
+
 
 class GridApprovalTest {
 
     // # initial state - an empty grid
     // # a grid with top left cell set to letter A
     // # a grid bottom right cell set to number
-    // A grid with Yellow Block in center
+    // # A grid with Blue block in center
+    // A grid with all Blocks of all 7 colors represented
+    /*
+Color.RED
+Color.BLUE
+Color.GREEN
+Color.YELLOW
+Color.GRAY
+Color.MAGENTA
+Color.CYAN
+     */
 
     @Test
     void anEmptyGrid() {
@@ -35,4 +48,37 @@ class GridApprovalTest {
         grid.put(new Location(1, 1), new Block());
         Approvals.verify(grid);
     }
+
+    @Test
+    void aGridWithAll7ColorsRepresented() {
+        var grid = new MyBoundedGrid<Block>(1, 7);
+        var colors = List.of(Color.RED,
+                Color.BLUE,
+                Color.GREEN,
+                Color.YELLOW,
+                Color.GRAY,
+                Color.MAGENTA,
+                Color.CYAN
+        );
+        int column = 0;
+        for (var color :
+                colors) {
+            Block block = new Block();
+            block.setColor(color);
+            grid.put(new Location(0, column++), block);
+        }
+        Approvals.verify(grid);
+    }
+
+
+
+    /*
+Color.RED,
+Color.BLUE,
+Color.GREEN,
+Color.YELLOW,
+Color.GRAY,
+Color.MAGENTA,
+Color.CYAN
+*/
 }

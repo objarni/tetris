@@ -52,7 +52,29 @@ public class Block {
 
     }
 
+
     public String toString() {
-        return "B";
+        if (color == Color.RED) {
+            return "R";
+        }
+        if (color == Color.BLUE) {
+            return "B";
+        }
+        if (color == Color.GREEN) {
+            return "G";
+        }
+        if (color == Color.YELLOW) {
+            return "Y";
+        }
+        if (color == Color.GRAY) {
+            return "g";
+        }
+        if (color == Color.MAGENTA) {
+            return "M";
+        }
+        if (color == Color.CYAN) {
+            return "C";
+        }
+        throw new RuntimeException("Unknown color " + color);
     }
 }

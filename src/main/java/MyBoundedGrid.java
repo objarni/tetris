@@ -13,7 +13,7 @@ public class MyBoundedGrid<E> {
     }
 
     public int getNumberOfColumns() {
-        return occupantArray[1].length;
+        return occupantArray[0].length;
     }
 
     public boolean isValid(Location location) {

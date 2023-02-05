@@ -1,0 +1,2 @@
+A grid of 1 rows 7 columns. Content:
+RBGYgMC
