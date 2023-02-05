@@ -1,4 +1,0 @@
-Grid of 3 rows, 2 cols:
-#.
-#.
-##
