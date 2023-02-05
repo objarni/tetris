@@ -73,8 +73,11 @@ public class MyBoundedGrid<E> {
 
     @Override
     public String toString() {
-        var cells = printCells();
-        return String.format("A grid of %d rows %d columns. Content:\n%s", this.getNumberOfRows(), this.getNumberOfColumns(), cells);
+        return String.format(
+                "A grid of %d rows %d columns. Content:\n%s",
+                this.getNumberOfRows(),
+                this.getNumberOfColumns(),
+                printCells());
     }
 
     private String printCells() {
