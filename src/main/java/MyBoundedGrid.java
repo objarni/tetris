@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyBoundedGrid<E> {
     private Object[][] occupantArray;
@@ -73,14 +74,21 @@ public class MyBoundedGrid<E> {
 
     @Override
     public String toString() {
-        return String.format(
-                "A grid of %d rows %d columns. Content:\n%s",
-                this.getNumberOfRows(),
-                this.getNumberOfColumns(),
-                printCells());
+        return String.format("A grid of %d rows %d columns. Content:\n%s", this.getNumberOfRows(), this.getNumberOfColumns(), printCells());
     }
 
     private String printCells() {
-        return "...\n...";
+        List<String> rows = new ArrayList<>();
+        for (var row : this.occupantArray) {
+            rows.add(printRow(row));
+        }
+        return String.join("\n", rows);
+    }
+
+    private String printRow(Object[] theRow) {
+        StringBuilder sb = new StringBuilder();
+        for (var elem : theRow)
+            sb.append((elem == null) ? "." : elem);
+        return sb.toString();
     }
 }
