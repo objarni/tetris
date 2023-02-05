@@ -1,1 +1,1 @@
-MyBoundedGrid@1cab0bfb
+A grid of 2 rows 3 columns

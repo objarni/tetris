@@ -70,4 +70,9 @@ public class MyBoundedGrid<E> {
         return locations;
 
     }
+
+    @Override
+    public String toString() {
+        return String.format("A grid of %d rows %d columns", this.getNumberOfRows(), this.getNumberOfColumns());
+    }
 }
