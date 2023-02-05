@@ -14,4 +14,11 @@ class GridApprovalTest {
         var grid = new MyBoundedGrid<String>(2, 3);
         Approvals.verify(grid);
     }
+
+    @Test
+    void aGridWithTopLeftCellsSetToA() {
+        var grid = new MyBoundedGrid<String>(2, 3);
+        grid.put(new Location(0, 0), "A");
+        Approvals.verify(grid);
+    }
 }
