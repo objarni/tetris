@@ -7,21 +7,6 @@ import java.util.List;
 
 class GridApprovalTest {
 
-    // # initial state - an empty grid
-    // # a grid with top left cell set to letter A
-    // # a grid bottom right cell set to number
-    // # A grid with Blue block in center
-    // A grid with all Blocks of all 7 colors represented
-    /*
-Color.RED
-Color.BLUE
-Color.GREEN
-Color.YELLOW
-Color.GRAY
-Color.MAGENTA
-Color.CYAN
-     */
-
     @Test
     void anEmptyGrid() {
         var grid = new MyBoundedGrid<String>(2, 3);
@@ -69,16 +54,4 @@ Color.CYAN
         }
         Approvals.verify(grid);
     }
-
-
-
-    /*
-Color.RED,
-Color.BLUE,
-Color.GREEN,
-Color.YELLOW,
-Color.GRAY,
-Color.MAGENTA,
-Color.CYAN
-*/
 }
