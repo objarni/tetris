@@ -48,6 +48,14 @@ public class BlockDisplay implements KeyListener {
 
         frame.pack();
         frame.setVisible(true);
+
+		frame.add(new JPanel(){
+			@Override
+			public void paintComponent(Graphics g){
+				super.paintComponent(g);
+				g.drawRect(5, 225, 105, 105);
+			}
+		}, BorderLayout.CENTER);
     }
 
     public void showBlocks() {
