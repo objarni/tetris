@@ -53,6 +53,6 @@ public class Block {
     }
 
     public String toString() {
-        return "source.Block[location=" + location + ",color=" + color + "]";
+        return "B";
     }
 }
