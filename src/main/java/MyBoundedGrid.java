@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyBoundedGrid<E> {
-    private Object[][] occupantArray;
+    private final Object[][] occupantArray;
 
     public MyBoundedGrid(int rows, int columns) {
         occupantArray = new Object[rows][columns];
@@ -60,7 +60,7 @@ public class MyBoundedGrid<E> {
     }
 
     public ArrayList<Location> getOccupiedLocations() {
-        ArrayList<Location> locations = new ArrayList<Location>();
+        ArrayList<Location> locations = new ArrayList<>();
         for (int row = 0; row < getNumberOfRows(); row++) {
             for (int column = 0; column < getNumberOfColumns(); column++) {
                 Location location = new Location(row, column);
