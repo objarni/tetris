@@ -1,4 +1,5 @@
 import org.approvaltests.Approvals;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
@@ -53,5 +54,13 @@ class GridApprovalTest {
             grid.put(new Location(0, column++), block);
         }
         Approvals.verify(grid);
+    }
+
+    @Test
+    void nullIsWhenYouAreOutsideOfBounds() {
+
+        var grid = new MyBoundedGrid<Block>(3, 3);
+        Block nullable = grid.get(new Location(-1, -1));
+        Assertions.assertNull(nullable);
     }
 }

@@ -24,14 +24,17 @@ public class MyBoundedGrid<E> {
     }
 
     public E get(Location location) {
-        for (int row = 0; row < getNumberOfRows(); row++) {
+        int row = location.getRow();
+        int column = location.getColumn();
+        return (E) occupantArray[row][column];
+        /*for (int row = 0; row < getNumberOfRows(); row++) {
             for (int column = 0; column < getNumberOfColumns(); column++) {
                 if (row == location.getRow() && column == location.getColumn()) {
                     return (E) occupantArray[row][column];
                 }
             }
         }
-        return null;
+        return null;*/
     }
 
     public E put(Location location, E element) {
