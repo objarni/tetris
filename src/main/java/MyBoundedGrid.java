@@ -17,9 +17,10 @@ public class MyBoundedGrid<E> {
     }
 
     public boolean isValid(Location location) {
-        if (location.getRow() < getNumberOfRows() && location.getColumn() < getNumberOfColumns() && location.getRow() >= 0 && location.getColumn() >= 0) {
-            return true;
-        } else return false;
+        return location.getRow() < getNumberOfRows() &&
+            location.getColumn() < getNumberOfColumns() &&
+            location.getRow() >= 0 &&
+            location.getColumn() >= 0;
     }
 
     public E get(Location location) {
@@ -74,7 +75,12 @@ public class MyBoundedGrid<E> {
 
     @Override
     public String toString() {
-        return String.format("A grid of %d rows %d columns. Content:\n%s", this.getNumberOfRows(), this.getNumberOfColumns(), printCells());
+        return String.format(
+            "A grid of %d rows %d columns. Content:\n%s",
+            this.getNumberOfRows(),
+            this.getNumberOfColumns(),
+            printCells()
+        );
     }
 
     private String printCells() {
