@@ -58,9 +58,31 @@ class GridApprovalTest {
 
     @Test
     void nullIsWhenYouAreOutsideOfBounds() {
-
         var grid = new MyBoundedGrid<Block>(3, 3);
         Block nullable = grid.get(new Location(-1, -1));
         Assertions.assertNull(nullable);
+    }
+
+    @Test
+    void removeFromEmptyGrid() {
+        var grid = new MyBoundedGrid<String>(2, 3);
+        String result = grid.remove(new Location(0, 0));
+        Assertions.assertNull(result);
+    }
+
+    @Test
+    void removeGetsWhatYouPut() {
+        var grid = new MyBoundedGrid<Integer>(2, 3);
+        grid.put(new Location(1, 2), 10);
+        int result = grid.remove(new Location(1, 2));
+        Assertions.assertEquals(10, result);
+    }
+
+    @Test
+    void removeOutsideGrid() {
+        var grid = new MyBoundedGrid<Integer>(2, 3);
+        grid.put(new Location(1, 2), 10);
+        Object result = grid.remove(new Location(-1, -1));
+        Assertions.assertNull(result);
     }
 }
