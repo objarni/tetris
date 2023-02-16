@@ -18,23 +18,17 @@ public class MyBoundedGrid<E> {
 
     public boolean isValid(Location location) {
         return location.getRow() < getNumberOfRows() &&
-            location.getColumn() < getNumberOfColumns() &&
-            location.getRow() >= 0 &&
-            location.getColumn() >= 0;
+                location.getColumn() < getNumberOfColumns() &&
+                location.getRow() >= 0 &&
+                location.getColumn() >= 0;
     }
 
     public E get(Location location) {
-        int row = location.getRow();
-        int column = location.getColumn();
-        return (E) occupantArray[row][column];
-        /*for (int row = 0; row < getNumberOfRows(); row++) {
-            for (int column = 0; column < getNumberOfColumns(); column++) {
-                if (row == location.getRow() && column == location.getColumn()) {
-                    return (E) occupantArray[row][column];
-                }
-            }
+        if (isValid(location)) {
+            return (E) occupantArray[location.getRow()][location.getColumn()];
+        } else {
+            return null;
         }
-        return null;*/
     }
 
     public E put(Location location, E element) {
@@ -79,10 +73,10 @@ public class MyBoundedGrid<E> {
     @Override
     public String toString() {
         return String.format(
-            "A grid of %d rows %d columns. Content:\n%s",
-            this.getNumberOfRows(),
-            this.getNumberOfColumns(),
-            printCells()
+                "A grid of %d rows %d columns. Content:\n%s",
+                this.getNumberOfRows(),
+                this.getNumberOfColumns(),
+                printCells()
         );
     }
 
