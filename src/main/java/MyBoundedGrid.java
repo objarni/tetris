@@ -34,6 +34,7 @@ public class MyBoundedGrid<E> {
 
     public E put(Location location, E element) {
         E former = get(location);
+
         for (int row = 0; row < getNumberOfRows(); row++) {
             for (int column = 0; column < getNumberOfColumns(); column++) {
                 if (row == location.getRow() && column == location.getColumn()) {

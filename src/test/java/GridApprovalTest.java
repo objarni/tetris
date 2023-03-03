@@ -85,4 +85,10 @@ class GridApprovalTest {
         Object result = grid.remove(new Location(-1, -1));
         Assertions.assertNull(result);
     }
+
+    @Test
+    void putOnInvalidLocationSilentlyIgnoresElement() {
+        var grid = new MyBoundedGrid<Integer>(2, 3);
+        grid.put(new Location(-1, -1), 10);
+    }
 }
