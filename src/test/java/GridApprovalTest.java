@@ -89,6 +89,8 @@ class GridApprovalTest {
     @Test
     void putOnInvalidLocationSilentlyIgnoresElement() {
         var grid = new MyBoundedGrid<Integer>(2, 3);
+
         grid.put(new Location(-1, -1), 10);
+        Approvals.verify(grid);
     }
 }
