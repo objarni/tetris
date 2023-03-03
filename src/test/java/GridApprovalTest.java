@@ -24,7 +24,7 @@ class GridApprovalTest {
 
     @Test
     void aGridWithBottomRightCellsSetTo1() {
-        var grid = new Grid<Integer>(2, 3);
+        var grid = createGrid();
         grid.put(new Location(1, 2), 1);
         Approvals.verify(grid);
     }
@@ -73,7 +73,7 @@ class GridApprovalTest {
 
     @Test
     void removeGetsWhatYouPut() {
-        var grid = new Grid<Integer>(2, 3);
+        var grid = createGrid();
         grid.put(new Location(1, 2), 10);
         int result = grid.remove(new Location(1, 2));
         Assertions.assertEquals(10, result);
@@ -81,7 +81,7 @@ class GridApprovalTest {
 
     @Test
     void removeOutsideGrid() {
-        var grid = new Grid<Integer>(2, 3);
+        var grid = createGrid();
         grid.put(new Location(1, 2), 10);
         Object result = grid.remove(new Location(-1, -1));
         Assertions.assertNull(result);
@@ -89,24 +89,27 @@ class GridApprovalTest {
 
     @Test
     void putOnInvalidLocationSilentlyIgnoresElement() {
-        var grid = new Grid<Integer>(2, 3);
+        var grid = createGrid();
         grid.put(new Location(-1, -1), 10);
         Approvals.verify(grid);
     }
 
     @Test
     void getOccupiedLocationsForEmptyGrid() {
-        var grid = new Grid<Integer>(2, 3);
+        var grid = createGrid();
         Assertions.assertTrue(grid.getOccupiedLocations().isEmpty());
     }
 
     @Test
     void getOccupiedLocationsForGridWithOneItem() {
-        var grid = new Grid<Integer>(2, 3);
-        grid.put(new Location(1,1),2);
+        var grid = createGrid();
+        Location expectedLocation = new Location(1, 1);
+        grid.put(expectedLocation,2);
         ArrayList<Location> locations = grid.getOccupiedLocations();
-        Assertions.assertEquals(grid.getOccupiedLocations().size(),1);
-        Assertions.assertEquals(locations.get(0).getRow(),1);
-        Assertions.assertEquals(locations.get(0).getColumn(),1);
+        Assertions.assertEquals(locations, List.of(expectedLocation));
+    }
+
+    private static Grid<Integer> createGrid() {
+        return new Grid<Integer>(2, 3);
     }
 }
