@@ -41,17 +41,11 @@ public class MyBoundedGrid<E> {
     }
 
     public E remove(Location location) {
-        for (int row = 0; row < getNumberOfRows(); row++) {
-            for (int column = 0; column < getNumberOfColumns(); column++) {
-                if (row == location.getRow() && column == location.getColumn()) {
-                    Object former = occupantArray[row][column];
-                    occupantArray[row][column] = null;
-                    //noinspection unchecked
-                    return (E) former;
-                }
-            }
+        E former = get(location);
+        if (isValid(location)){
+            occupantArray[location.getRow()][location.getColumn()] = null;
         }
-        return null;
+        return former;
     }
 
     public ArrayList<Location> getOccupiedLocations() {
