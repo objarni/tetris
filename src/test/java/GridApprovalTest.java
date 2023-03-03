@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -103,6 +104,9 @@ class GridApprovalTest {
     void getOccupiedLocationsForGridWithOneItem() {
         var grid = new Grid<Integer>(2, 3);
         grid.put(new Location(1,1),2);
-        Assertions.assertFalse(grid.getOccupiedLocations().isEmpty());
+        ArrayList<Location> locations = grid.getOccupiedLocations();
+        Assertions.assertEquals(grid.getOccupiedLocations().size(),1);
+        Assertions.assertEquals(locations.get(0).getRow(),1);
+        Assertions.assertEquals(locations.get(0).getColumn(),1);
     }
 }
