@@ -1,7 +1,7 @@
 import java.awt.*;
 
 public class Block {
-    private MyBoundedGrid<Block> grid;
+    private Grid<Block> grid;
     private Location location;
     private Color color;
 
@@ -19,7 +19,7 @@ public class Block {
         color = newColor;
     }
 
-    public MyBoundedGrid<Block> getGrid() {
+    public Grid<Block> getGrid() {
         return grid;
     }
 
@@ -33,7 +33,7 @@ public class Block {
         location = null;
     }
 
-    public void putSelfInGrid(MyBoundedGrid<Block> grid, Location atLocation) {
+    public void putSelfInGrid(Grid<Block> grid, Location atLocation) {
         Block old = grid.get(atLocation);
         if (old != null) {
             old.grid = null;

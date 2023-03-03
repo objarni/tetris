@@ -19,7 +19,7 @@ can be morphed into WordPress, also written in C
  * Refactor GridMonster 'test' into proper tests
  * Apply all IntelliJ suggestions, file by file
  * Look for primitive obsession, clean up
- * Simplify the double-for-pattern seen e.g in MyBoundedGrid
+ * Simplify the double-for-pattern seen e.g in Grid
 
 # Possible architectural patterns
  * Hexagonal architecture

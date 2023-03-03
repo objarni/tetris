@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyBoundedGrid<E> {
+public class Grid<E> {
     private final Object[][] occupantArray;
 
-    public MyBoundedGrid(int rows, int columns) {
+    public Grid(int rows, int columns) {
         occupantArray = new Object[rows][columns];
     }
 

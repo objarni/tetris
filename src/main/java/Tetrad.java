@@ -10,9 +10,9 @@ public class Tetrad {
     private static int Block7 = 6;
 
     private Block[] blocks;
-    private MyBoundedGrid<Block> theGrid;
+    private Grid<Block> theGrid;
 
-    public Tetrad(MyBoundedGrid<Block> grid) {
+    public Tetrad(Grid<Block> grid) {
         blocks = new Block[4];
         theGrid = grid;
 
@@ -109,7 +109,7 @@ public class Tetrad {
 
     }
 
-    private void addToLocations(MyBoundedGrid<Block> grid, Location[] locations) {
+    private void addToLocations(Grid<Block> grid, Location[] locations) {
         for (int blockIndex = 0; blockIndex < blocks.length; blockIndex++) {
             blocks[blockIndex].putSelfInGrid(grid, locations[blockIndex]);
         }
@@ -132,7 +132,7 @@ public class Tetrad {
         return oldBlocks;
     }
 
-    private boolean areEmpty(MyBoundedGrid<Block> grid, Location[] locations) {
+    private boolean areEmpty(Grid<Block> grid, Location[] locations) {
         for (int locationIndex = 0; locationIndex < locations.length; locationIndex++) {
             if (!grid.isValid(locations[locationIndex]) || grid.get(locations[locationIndex]) != null) {
                 return false;

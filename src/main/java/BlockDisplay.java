@@ -6,12 +6,12 @@ import java.awt.event.KeyListener;
 public class BlockDisplay implements KeyListener {
     private static final Color BACKGROUND = Color.WHITE;
 
-    private MyBoundedGrid<Block> board;
+    private Grid<Block> board;
     private JPanel[][] grid;
     private JFrame frame;
     private ArrowListener listener;
 
-    public BlockDisplay(MyBoundedGrid<Block> board) {
+    public BlockDisplay(Grid<Block> board) {
         this.board = board;
         grid = new JPanel[board.getNumberOfRows()][board.getNumberOfColumns()];
 

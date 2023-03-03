@@ -5,7 +5,7 @@ public class GridMonster {
     public static void main(String[] args) {
         System.out.println("Level 1:  getting number of rows and columns");
 
-        MyBoundedGrid<String> grid = new MyBoundedGrid<String>(2, 1);
+        Grid<String> grid = new Grid<String>(2, 1);
 
         if (grid.getNumberOfRows() != 2)
             throw new RuntimeException("getNumRows is dumb");
@@ -88,7 +88,7 @@ public class GridMonster {
         if (h.getColor() != red)
             throw new RuntimeException("setColor/getColor is dumb");
 
-        MyBoundedGrid<Block> grid2 = new MyBoundedGrid<Block>(4, 5);
+        Grid<Block> grid2 = new Grid<Block>(4, 5);
         BlockDisplay display = new BlockDisplay(grid2);
 
         h.putSelfInGrid(grid2, new Location(0, 2));

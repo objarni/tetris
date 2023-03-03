@@ -1,5 +1,5 @@
 public class Tetris implements ArrowListener {
-    MyBoundedGrid<Block> grid;
+    Grid<Block> grid;
     BlockDisplay display;
     Tetrad activeTetrad;
     int points;
@@ -9,7 +9,7 @@ public class Tetris implements ArrowListener {
     int totalRowsCompleted;
 
     public Tetris() {
-        grid = new MyBoundedGrid<Block>(30, 20);
+        grid = new Grid<Block>(30, 20);
         display = new BlockDisplay(grid);
         display.setArrowListener(this);
         points = 0;
