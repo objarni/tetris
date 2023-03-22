@@ -176,4 +176,10 @@ public class Tetrad {
             return false;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Tetrad:\n"
+                + "Grid: " + theGrid.toString();
+    }
 }
