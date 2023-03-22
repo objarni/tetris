@@ -180,6 +180,11 @@ public class Tetrad {
     @Override
     public String toString() {
         return "Tetrad:\n"
-                + "Grid: " + theGrid.toString();
+                + "Grid: " + theGrid.toString() + "\n"
+                + "Blocks: " + printBlocks();
+    }
+
+    public String printBlocks() {
+        return "";
     }
 }
