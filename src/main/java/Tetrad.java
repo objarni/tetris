@@ -13,6 +13,12 @@ public class Tetrad {
     private Grid<Block> theGrid;
 
     public Tetrad(Grid<Block> grid) {
+        initialize(grid, getRandom());
+
+    }
+
+    private void initialize(Grid<Block> grid, int randomNumber) {
+
         blocks = new Block[4];
         theGrid = grid;
 
@@ -28,7 +34,7 @@ public class Tetrad {
         blocks[2] = block3;
         blocks[3] = block4;
 
-        int randomNumber = getRandom();
+
 
         if (randomNumber == Block1) {
             block1.setColor(Color.RED);
@@ -106,7 +112,6 @@ public class Tetrad {
             locations[3] = new Location(1, 5);
         }
         addToLocations(grid, locations);
-
     }
 
     private void addToLocations(Grid<Block> grid, Location[] locations) {
