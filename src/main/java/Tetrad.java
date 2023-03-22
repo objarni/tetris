@@ -1,7 +1,4 @@
-import javax.crypto.IllegalBlockSizeException;
 import java.awt.*;
-import java.util.Arrays;
-import java.util.stream.Stream;
 
 public class Tetrad {
     private static int Block1 = 0;
@@ -191,18 +188,7 @@ public class Tetrad {
     @Override
     public String toString() {
         return "Tetrad:\n"
-                + "Grid: " + theGrid.toString() + "\n"
-                + "Blocks: " + printBlocks();
+                + "Grid: " + theGrid.toString();
     }
 
-    public String printBlocks() {
-        String blockString = "";
-        for(int i = 0; i < blocks.length; i++) {
-            blockString += blocks[i];
-        }
-
-        Stream<String> tmp = Arrays.stream(blocks).map(Block::toString);
-        
-        return blockString;
-    }
 }
