@@ -1,4 +1,7 @@
+import javax.crypto.IllegalBlockSizeException;
 import java.awt.*;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 public class Tetrad {
     private static int Block1 = 0;
@@ -14,7 +17,10 @@ public class Tetrad {
 
     public Tetrad(Grid<Block> grid) {
         initialize(grid, getRandom());
+    }
 
+    public Tetrad(Grid<Block> grid, int seed) {
+        initialize(grid, seed);
     }
 
     private void initialize(Grid<Block> grid, int randomNumber) {
@@ -195,6 +201,8 @@ public class Tetrad {
             blockString += blocks[i];
         }
 
+        Stream<String> tmp = Arrays.stream(blocks).map(Block::toString);
+        
         return blockString;
     }
 }
