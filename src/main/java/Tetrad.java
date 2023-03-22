@@ -185,6 +185,11 @@ public class Tetrad {
     }
 
     public String printBlocks() {
-        return "";
+        String blockString = "";
+        for(int i = 0; i < blocks.length; i++) {
+            blockString += blocks[i];
+        }
+
+        return blockString;
     }
 }
