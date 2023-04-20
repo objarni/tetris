@@ -24,4 +24,8 @@ class TetradApprovalTest {
         Approvals.verify(tetrad);
     }
 
+    @Test
+    void doubleRotateBlock() {
+    }
+
 }
