@@ -1,4 +1,6 @@
 import org.approvaltests.Approvals;
+import org.approvaltests.reporters.JunitReporter;
+import org.approvaltests.reporters.UseReporter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -7,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@UseReporter(JunitReporter.class)
 class GridApprovalTest {
 
     @Test
