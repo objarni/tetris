@@ -1,13 +1,13 @@
 import java.awt.*;
 
 public class Tetrad {
-    static int Block1 = 0;
-    static int Block2 = 1;
-    static int Block3 = 2;
-    static int Block4 = 3;
-    static int Block5 = 4;
-    static int Block6 = 5;
-    static int Block7 = 6;
+    static int Block_I = 0;
+    static int Block_O = 1;
+    static int Block_L = 2;
+    static int Block_J = 3;
+    static int Block_S = 4;
+    static int Block_Z = 5;
+    static int Block_T = 6;
 
     private Block[] blocks;
     private Grid<Block> theGrid;
@@ -39,7 +39,7 @@ public class Tetrad {
 
 
 
-        if (blockNumber == Block1) {
+        if (blockNumber == Block_I) {
             block1.setColor(Color.RED);
             block2.setColor(Color.RED);
             block3.setColor(Color.RED);
@@ -49,7 +49,7 @@ public class Tetrad {
             locations[2] = new Location(2, 4);
             locations[3] = new Location(3, 4);
         }
-        if (blockNumber == Block2) {
+        if (blockNumber == Block_O) {
             block1.setColor(Color.BLUE);
             block2.setColor(Color.BLUE);
             block3.setColor(Color.BLUE);
@@ -60,7 +60,7 @@ public class Tetrad {
             locations[3] = new Location(1, 4);
         }
 
-        if (blockNumber == Block3) {
+        if (blockNumber == Block_L) {
             block1.setColor(Color.GREEN);
             block2.setColor(Color.GREEN);
             block3.setColor(Color.GREEN);
@@ -71,7 +71,7 @@ public class Tetrad {
             locations[3] = new Location(1, 5);
         }
 
-        if (blockNumber == Block4) {
+        if (blockNumber == Block_J) {
             block1.setColor(Color.YELLOW);
             block2.setColor(Color.YELLOW);
             block3.setColor(Color.YELLOW);
@@ -82,7 +82,7 @@ public class Tetrad {
             locations[3] = new Location(2, 5);
         }
 
-        if (blockNumber == Block5) {
+        if (blockNumber == Block_S) {
             block1.setColor(Color.GRAY);
             block2.setColor(Color.GRAY);
             block3.setColor(Color.GRAY);
@@ -93,7 +93,7 @@ public class Tetrad {
             locations[3] = new Location(2, 4);
         }
 
-        if (blockNumber == Block6) {
+        if (blockNumber == Block_Z) {
             block1.setColor(Color.MAGENTA);
             block2.setColor(Color.MAGENTA);
             block3.setColor(Color.MAGENTA);
@@ -104,7 +104,7 @@ public class Tetrad {
             locations[3] = new Location(1, 3);
         }
 
-        if (blockNumber == Block7) {
+        if (blockNumber == Block_T) {
             block1.setColor(Color.CYAN);
             block2.setColor(Color.CYAN);
             block3.setColor(Color.CYAN);

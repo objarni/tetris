@@ -29,50 +29,50 @@ class TetradApprovalTest {
     }
 
     @Test
-    void blockOne() {
+    void blockI() {
         var grid = new Grid<Block>(10, 10);
-        var tetrad = new Tetrad(grid, Tetrad.Block1);
+        var tetrad = new Tetrad(grid, Tetrad.Block_I);
         Approvals.verify(tetrad);
     }
 
     @Test
     void blockTwo() {
         var grid = new Grid<Block>(10, 10);
-        var tetrad = new Tetrad(grid, 2);
+        var tetrad = new Tetrad(grid, Tetrad.Block_O);
         Approvals.verify(tetrad);
     }
 
     @Test
     void blockThree() {
         var grid = new Grid<Block>(10, 10);
-        var tetrad = new Tetrad(grid, 3);
+        var tetrad = new Tetrad(grid, Tetrad.Block_L);
         Approvals.verify(tetrad);
     }
 
     @Test
     void blockFour() {
         var grid = new Grid<Block>(10, 10);
-        var tetrad = new Tetrad(grid, 4);
+        var tetrad = new Tetrad(grid, Tetrad.Block_J);
         Approvals.verify(tetrad);
     }
 
     @Test
     void blockFive() {
         var grid = new Grid<Block>(10, 10);
-        var tetrad = new Tetrad(grid, 5);
+        var tetrad = new Tetrad(grid, Tetrad.Block_S);
         Approvals.verify(tetrad);
     }
 
     @Test
     void blockSix() {
         var grid = new Grid<Block>(10, 10);
-        var tetrad = new Tetrad(grid, 6);
+        var tetrad = new Tetrad(grid, Tetrad.Block_Z);
         Approvals.verify(tetrad);
     }
     @Test
     void blockSeven() {
         var grid = new Grid<Block>(10, 10);
-        var tetrad = new Tetrad(grid, Tetrad.Block7);
+        var tetrad = new Tetrad(grid, Tetrad.Block_T);
         Approvals.verify(tetrad);
     }
 }
