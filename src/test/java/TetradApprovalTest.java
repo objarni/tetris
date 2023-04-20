@@ -45,14 +45,14 @@ class TetradApprovalTest {
     @Test
     void blockThree() {
         var grid = new Grid<Block>(10, 10);
-        var tetrad = new Tetrad(grid, Tetrad.Block_L);
+        var tetrad = new Tetrad(grid, Tetrad.Block_L_);
         Approvals.verify(tetrad);
     }
 
     @Test
     void blockFour() {
         var grid = new Grid<Block>(10, 10);
-        var tetrad = new Tetrad(grid, Tetrad.Block_J);
+        var tetrad = new Tetrad(grid, Tetrad.Block_L);
         Approvals.verify(tetrad);
     }
 
@@ -64,9 +64,9 @@ class TetradApprovalTest {
     }
 
     @Test
-    void blockSix() {
+    void blockL() {
         var grid = new Grid<Block>(10, 10);
-        var tetrad = new Tetrad(grid, Tetrad.Block_Z);
+        var tetrad = new Tetrad(grid, Tetrad.Block_L);
         Approvals.verify(tetrad);
     }
     @Test
