@@ -1,26 +1,26 @@
 import java.awt.*;
 
 public class Tetrad {
-    private static int Block1 = 0;
-    private static int Block2 = 1;
-    private static int Block3 = 2;
-    private static int Block4 = 3;
-    private static int Block5 = 4;
-    private static int Block6 = 5;
-    private static int Block7 = 6;
+    static int Block1 = 0;
+    static int Block2 = 1;
+    static int Block3 = 2;
+    static int Block4 = 3;
+    static int Block5 = 4;
+    static int Block6 = 5;
+    static int Block7 = 6;
 
     private Block[] blocks;
     private Grid<Block> theGrid;
 
     public Tetrad(Grid<Block> grid) {
-        initialize(grid, getRandom());
+        initialize(grid, getRandomBlockNumber());
     }
 
-    public Tetrad(Grid<Block> grid, int seed) {
-        initialize(grid, seed);
+    public Tetrad(Grid<Block> grid, int blockNumber) {
+        initialize(grid, blockNumber);
     }
 
-    private void initialize(Grid<Block> grid, int randomNumber) {
+    private void initialize(Grid<Block> grid, int blockNumber) {
 
         blocks = new Block[4];
         theGrid = grid;
@@ -39,7 +39,7 @@ public class Tetrad {
 
 
 
-        if (randomNumber == Block1) {
+        if (blockNumber == Block1) {
             block1.setColor(Color.RED);
             block2.setColor(Color.RED);
             block3.setColor(Color.RED);
@@ -49,7 +49,7 @@ public class Tetrad {
             locations[2] = new Location(2, 4);
             locations[3] = new Location(3, 4);
         }
-        if (randomNumber == Block2) {
+        if (blockNumber == Block2) {
             block1.setColor(Color.BLUE);
             block2.setColor(Color.BLUE);
             block3.setColor(Color.BLUE);
@@ -60,7 +60,7 @@ public class Tetrad {
             locations[3] = new Location(1, 4);
         }
 
-        if (randomNumber == Block3) {
+        if (blockNumber == Block3) {
             block1.setColor(Color.GREEN);
             block2.setColor(Color.GREEN);
             block3.setColor(Color.GREEN);
@@ -71,7 +71,7 @@ public class Tetrad {
             locations[3] = new Location(1, 5);
         }
 
-        if (randomNumber == Block4) {
+        if (blockNumber == Block4) {
             block1.setColor(Color.YELLOW);
             block2.setColor(Color.YELLOW);
             block3.setColor(Color.YELLOW);
@@ -82,7 +82,7 @@ public class Tetrad {
             locations[3] = new Location(2, 5);
         }
 
-        if (randomNumber == Block5) {
+        if (blockNumber == Block5) {
             block1.setColor(Color.GRAY);
             block2.setColor(Color.GRAY);
             block3.setColor(Color.GRAY);
@@ -93,7 +93,7 @@ public class Tetrad {
             locations[3] = new Location(2, 4);
         }
 
-        if (randomNumber == Block6) {
+        if (blockNumber == Block6) {
             block1.setColor(Color.MAGENTA);
             block2.setColor(Color.MAGENTA);
             block3.setColor(Color.MAGENTA);
@@ -104,7 +104,7 @@ public class Tetrad {
             locations[3] = new Location(1, 3);
         }
 
-        if (randomNumber == Block7) {
+        if (blockNumber == Block7) {
             block1.setColor(Color.CYAN);
             block2.setColor(Color.CYAN);
             block3.setColor(Color.CYAN);
@@ -124,7 +124,7 @@ public class Tetrad {
 
     }
 
-    private int getRandom() {
+    private int getRandomBlockNumber() {
         int randomNumber = (int) (Math.random() * 7);
         return randomNumber;
     }

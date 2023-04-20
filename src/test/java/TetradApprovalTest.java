@@ -31,7 +31,7 @@ class TetradApprovalTest {
     @Test
     void blockOne() {
         var grid = new Grid<Block>(10, 10);
-        var tetrad = new Tetrad(grid, 1);
+        var tetrad = new Tetrad(grid, Tetrad.Block1);
         Approvals.verify(tetrad);
     }
 
@@ -72,7 +72,7 @@ class TetradApprovalTest {
     @Test
     void blockSeven() {
         var grid = new Grid<Block>(10, 10);
-        var tetrad = new Tetrad(grid, 7);
+        var tetrad = new Tetrad(grid, Tetrad.Block7);
         Approvals.verify(tetrad);
     }
 }
