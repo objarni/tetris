@@ -107,7 +107,7 @@ class GridApprovalTest {
     void getOccupiedLocationsForGridWithOneItem() {
         var grid = new Grid<Integer>(2, 3);
         Location expectedLocation = new Location(1, 1);
-        grid.put(expectedLocation,2);
+        grid.put(expectedLocation, 2);
         ArrayList<Location> locations = grid.getOccupiedLocations();
         Assertions.assertEquals(locations, List.of(expectedLocation));
     }
