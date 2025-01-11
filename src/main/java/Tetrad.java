@@ -2,7 +2,7 @@ import java.awt.*;
 
 public class Tetrad {
     static int Block_I = 0;
-    static int Block_tmp = 1;
+    static int Block_T = 1;
     static int Block_L = 2;
     static int Block_J = 3;
     static int Block_Zold = 4;
@@ -49,7 +49,7 @@ public class Tetrad {
             locations[2] = new Location(2, 4);
             locations[3] = new Location(3, 4);
         }
-        if (blockNumber == Block_tmp) {
+        if (blockNumber == Block_T) {
             block1.setColor(Color.BLUE);
             block2.setColor(Color.BLUE);
             block3.setColor(Color.BLUE);

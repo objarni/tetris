@@ -45,7 +45,7 @@ class TetradApprovalTest {
     @Test
     void blockT() {
         var grid = new Grid<Block>(10, 10);
-        var tetrad = new Tetrad(grid, Tetrad.Block_tmp);
+        var tetrad = new Tetrad(grid, Tetrad.Block_T);
         Approvals.verify(tetrad);
     }
 
