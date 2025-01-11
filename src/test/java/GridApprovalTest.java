@@ -111,5 +111,4 @@ class GridApprovalTest {
         ArrayList<Location> locations = grid.getOccupiedLocations();
         Assertions.assertEquals(locations, List.of(expectedLocation));
     }
-
 }

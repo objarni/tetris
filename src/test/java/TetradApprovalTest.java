@@ -3,7 +3,6 @@ import org.approvaltests.reporters.JunitReporter;
 import org.approvaltests.reporters.UseReporter;
 import org.junit.jupiter.api.Test;
 
-
 @UseReporter(JunitReporter.class)
 class TetradApprovalTest {
 
