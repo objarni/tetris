@@ -2,11 +2,11 @@ import java.awt.*;
 
 public class Tetrad {
     static int Block_I = 0;
-    static int Block_O = 1;
+    static int Block_tmp = 1;
     static int Block_L = 2;
-    static int Block_S = 3;
+    static int Block_J = 3;
     static int Block_Z = 4;
-    static int Block_L_ = 5;
+    static int Block_O = 5;
     static int Block_T = 6;
 
     private Block[] blocks;
@@ -49,7 +49,7 @@ public class Tetrad {
             locations[2] = new Location(2, 4);
             locations[3] = new Location(3, 4);
         }
-        if (blockNumber == Block_O) {
+        if (blockNumber == Block_tmp) {
             block1.setColor(Color.BLUE);
             block2.setColor(Color.BLUE);
             block3.setColor(Color.BLUE);
@@ -60,7 +60,7 @@ public class Tetrad {
             locations[3] = new Location(1, 4);
         }
 
-        if (blockNumber == Block_L_) {
+        if (blockNumber == Block_O) {
             block1.setColor(Color.GREEN);
             block2.setColor(Color.GREEN);
             block3.setColor(Color.GREEN);
@@ -82,7 +82,7 @@ public class Tetrad {
             locations[3] = new Location(2, 5);
         }
 
-        if (blockNumber == Block_S) {
+        if (blockNumber == Block_J) {
             block1.setColor(Color.GRAY);
             block2.setColor(Color.GRAY);
             block3.setColor(Color.GRAY);
