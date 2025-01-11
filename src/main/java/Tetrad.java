@@ -5,7 +5,7 @@ public class Tetrad {
     static int Block_T = 1;
     static int Block_L = 2;
     static int Block_J = 3;
-    static int Block_Zold = 4;
+    static int Block_S = 4;
     static int Block_O = 5;
     static int Block_Z = 6;
 
@@ -93,7 +93,7 @@ public class Tetrad {
             locations[3] = new Location(2, 4);
         }
 
-        if (blockNumber == Block_Zold) {
+        if (blockNumber == Block_S) {
             block1.setColor(Color.MAGENTA);
             block2.setColor(Color.MAGENTA);
             block3.setColor(Color.MAGENTA);
