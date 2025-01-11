@@ -128,9 +128,13 @@ public class Tetris implements ArrowListener {
         display.showBlocks();
     }
 
+    private void dropActiveTetrad() {
+        while (activeTetrad.translate(1, 0)) {
+        }
+    }
+
     public void spacePressed() {
-        speed -= 15;
-        activeTetrad.translate(1, 0);
+        dropActiveTetrad();
         display.showBlocks();
     }
 }
