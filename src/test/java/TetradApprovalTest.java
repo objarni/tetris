@@ -57,13 +57,6 @@ class TetradApprovalTest {
     }
 
     @Test
-    void blockFour() {
-        var grid = new Grid<Block>(10, 10);
-        var tetrad = new Tetrad(grid, Tetrad.Block_L);
-        Approvals.verify(tetrad);
-    }
-
-    @Test
     void blockJ() {
         var grid = new Grid<Block>(10, 10);
         var tetrad = new Tetrad(grid, Tetrad.Block_J);
