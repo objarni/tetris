@@ -26,6 +26,13 @@ class TetradApprovalTest {
 
     @Test
     void doubleRotateBlock() {
+        var grid = new Grid<Block>(10, 10);
+        var tetrad = new Tetrad(grid, 6);
+
+        tetrad.rotate();
+        tetrad.rotate();
+
+        Approvals.verify(tetrad);
     }
 
     @Test
