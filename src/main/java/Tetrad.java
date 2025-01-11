@@ -5,9 +5,9 @@ public class Tetrad {
     static int Block_tmp = 1;
     static int Block_L = 2;
     static int Block_J = 3;
-    static int Block_Z = 4;
+    static int Block_Zold = 4;
     static int Block_O = 5;
-    static int Block_T = 6;
+    static int Block_Z = 6;
 
     private Block[] blocks;
     private Grid<Block> theGrid;
@@ -93,7 +93,7 @@ public class Tetrad {
             locations[3] = new Location(2, 4);
         }
 
-        if (blockNumber == Block_Z) {
+        if (blockNumber == Block_Zold) {
             block1.setColor(Color.MAGENTA);
             block2.setColor(Color.MAGENTA);
             block3.setColor(Color.MAGENTA);
@@ -104,7 +104,7 @@ public class Tetrad {
             locations[3] = new Location(1, 3);
         }
 
-        if (blockNumber == Block_T) {
+        if (blockNumber == Block_Z) {
             block1.setColor(Color.CYAN);
             block2.setColor(Color.CYAN);
             block3.setColor(Color.CYAN);
