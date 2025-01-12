@@ -63,7 +63,7 @@ public class BlockDisplay implements KeyListener {
                     grid[row][column].setBorder(null);
                 } else {
                     grid[row][column].setBackground(square.getColor());
-                    grid[row][column].setBorder(BorderFactory.createLineBorder(BACKGROUND));
+                    grid[row][column].setBorder(BorderFactory.createLineBorder(Color.BLACK));
                 }
             }
     }
