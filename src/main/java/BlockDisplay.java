@@ -51,6 +51,10 @@ public class BlockDisplay implements KeyListener {
 
     }
 
+    public void closeWindow() {
+        frame.dispose();
+    }
+
     public void showBlocks() {
         for (int row = 0; row < grid.length; row++)
             for (int column = 0; column < grid[row].length; column++) {
@@ -92,6 +96,8 @@ public class BlockDisplay implements KeyListener {
             listener.upPressed();
         else if (code == KeyEvent.VK_SPACE)
             listener.spacePressed();
+        else if (code == KeyEvent.VK_ESCAPE)
+            listener.escPressed();
     }
 
     public void setArrowListener(ArrowListener listener) {

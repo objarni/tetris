@@ -8,4 +8,6 @@ public interface ArrowListener {
     void rightPressed();
 
     void spacePressed();
+
+    void escPressed();
 }

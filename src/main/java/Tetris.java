@@ -157,4 +157,11 @@ public class Tetris implements ArrowListener {
         activeTetrad = new Tetrad(grid);
         display.showBlocks();
     }
+
+    @Override
+    public void escPressed() {
+        // Close application
+        System.out.println("Exiting...");
+        display.closeWindow();
+    }
 }
