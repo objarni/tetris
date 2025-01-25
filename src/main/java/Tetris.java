@@ -9,13 +9,16 @@ public class Tetris implements ArrowListener {
     int totalRowsCompleted;
 
     public Tetris() {
-        grid = new Grid<Block>(30, 20);
+        grid = new Grid<>(20, 10);
         points = 0;
         totalRowsCompleted = 0;
         level = 1;
         speed = 1000;
         rowsCompletedSet = 0;
         activeTetrad = new Tetrad(grid);
+        if (IsDebugMode()) {
+            DebugFill();
+        }
         display = new BlockDisplay(grid);
         display.setArrowListener(this);
     }
@@ -25,7 +28,7 @@ public class Tetris implements ArrowListener {
     }
 
     private void DebugFill() {
-        for (int row = 0; row < grid.getNumberOfRows(); row++) {
+        for (int row = grid.getNumberOfRows()-2; row < grid.getNumberOfRows(); row++) {
             for (int column = 0; column < grid.getNumberOfColumns() - 1; column++) {
                 Location location = new Location(row, column);
                 Block block = new Block();
