@@ -47,9 +47,9 @@ public class Tetris implements ArrowListener {
     public void play() {
         boolean lost = false;
         try {
-            while (lost != true) {
+            while (!lost) {
                 boolean next = activeTetrad.translate(1, 0);
-                if (next == false) {
+                if (!next) {
                     clearCompletedRows();
                     clearCompletedRows();
                     clearCompletedRows();
@@ -61,7 +61,7 @@ public class Tetris implements ArrowListener {
                     }
                     display.setTitle("source.Tetris-- Level: " + level + "  Score: " + points);
                     activeTetrad = new Tetrad(grid);
-                    if (activeTetrad.translate(1, 0) == false) {
+                    if (!activeTetrad.translate(1, 0)) {
                         lost = true;
                         display.setArrowListener(null);
                         System.out.println("You lost!! How shameful...");
@@ -70,7 +70,7 @@ public class Tetris implements ArrowListener {
                 display.showBlocks();
                 Thread.sleep(speed);
             }
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ignored) {
         }
     }
 
@@ -146,8 +146,7 @@ public class Tetris implements ArrowListener {
     }
 
     private void dropActiveTetrad() {
-        while (activeTetrad.translate(1, 0)) {
-        }
+        while (activeTetrad.translate(1, 0));
     }
 
     public void spacePressed() {
