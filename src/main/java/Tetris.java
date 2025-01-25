@@ -154,7 +154,6 @@ public class Tetris implements ArrowListener {
 
     public void spacePressed() {
         dropActiveTetrad();
-        activeTetrad = new Tetrad(grid);
         display.showBlocks();
     }
 
