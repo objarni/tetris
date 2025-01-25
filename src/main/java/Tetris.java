@@ -15,16 +15,18 @@ public class Tetris implements ArrowListener {
         level = 1;
         speed = 1000;
         rowsCompletedSet = 0;
-        activeTetrad = new Tetrad(grid);
         if (IsDebugMode()) {
             DebugFill();
+            activeTetrad = new Tetrad(grid, Tetrad.Block_I);
         }
+        else
+            activeTetrad = new Tetrad(grid);
         display = new BlockDisplay(grid);
         display.setArrowListener(this);
     }
 
     private boolean IsDebugMode() {
-        return false;
+        return true;
     }
 
     private void DebugFill() {
