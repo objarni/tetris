@@ -163,5 +163,6 @@ public class Tetris implements ArrowListener {
         // Close application
         System.out.println("Exiting...");
         display.closeWindow();
+        System.exit(0);
     }
 }
