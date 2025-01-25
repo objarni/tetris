@@ -24,6 +24,16 @@ public class Tetris implements ArrowListener {
         return false;
     }
 
+    private void DebugFill() {
+        for (int row = 0; row < grid.getNumberOfRows(); row++) {
+            for (int column = 0; column < grid.getNumberOfColumns() - 1; column++) {
+                Location location = new Location(row, column);
+                Block block = new Block();
+                block.putSelfInGrid(grid, location);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Tetris game = new Tetris();
         game.display.setTitle("source.Tetris-- Level: " + 1 + "  Score: " + 0);
