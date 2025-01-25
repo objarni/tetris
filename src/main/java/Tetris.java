@@ -146,6 +146,7 @@ public class Tetris implements ArrowListener {
     }
 
     private void dropActiveTetrad() {
+        //noinspection StatementWithEmptyBody
         while (activeTetrad.translate(1, 0));
     }
 
