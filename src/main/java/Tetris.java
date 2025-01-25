@@ -20,6 +20,10 @@ public class Tetris implements ArrowListener {
         display.setArrowListener(this);
     }
 
+    private boolean IsDebugMode() {
+        return false;
+    }
+
     public static void main(String[] args) {
         Tetris game = new Tetris();
         game.display.setTitle("source.Tetris-- Level: " + 1 + "  Score: " + 0);
