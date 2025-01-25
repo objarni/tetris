@@ -10,14 +10,14 @@ public class Tetris implements ArrowListener {
 
     public Tetris() {
         grid = new Grid<Block>(30, 20);
-        display = new BlockDisplay(grid);
-        display.setArrowListener(this);
         points = 0;
         totalRowsCompleted = 0;
         level = 1;
         speed = 1000;
         rowsCompletedSet = 0;
         activeTetrad = new Tetrad(grid);
+        display = new BlockDisplay(grid);
+        display.setArrowListener(this);
     }
 
     public static void main(String[] args) {
