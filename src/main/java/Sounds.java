@@ -1,4 +1,5 @@
 public enum Sounds {
     BlockHitGround,
-    GameOver
+    GameOver,
+    RowDeleted
 }
