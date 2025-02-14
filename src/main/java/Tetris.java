@@ -126,7 +126,7 @@ public class Tetris implements ArrowListener {
                 }
             }
         }
-
+        playSound(Sounds.RowDeleted);
     }
 
     public void upPressed() {
