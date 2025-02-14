@@ -67,6 +67,7 @@ public class Tetris implements ArrowListener {
                         lost = true;
                         display.setArrowListener(null);
                         System.out.println("You lost!! How shameful...");
+                        playSound(Sounds.GameOver);
                     }
                 }
                 display.showBlocks();
