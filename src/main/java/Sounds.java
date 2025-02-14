@@ -1,3 +1,4 @@
 public enum Sounds {
-    BlockHitGround
+    BlockHitGround,
+    GameOver
 }

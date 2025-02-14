@@ -154,6 +154,7 @@ public class Tetris implements ArrowListener {
 
     public void spacePressed() {
         dropActiveTetrad();
+        playSound(Sounds.BlockHitGround);
         display.showBlocks();
     }
 
