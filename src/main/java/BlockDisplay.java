@@ -1,7 +1,9 @@
+import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 
 public class BlockDisplay implements KeyListener {
     private static final Color BACKGROUND = Color.WHITE;
@@ -102,5 +104,25 @@ public class BlockDisplay implements KeyListener {
 
     public void setArrowListener(ArrowListener listener) {
         this.listener = listener;
+    }
+
+    public void play(File file)
+    {
+        try
+        {
+            final Clip clip = (Clip) AudioSystem.getLine(new Line.Info(Clip.class));
+
+            clip.addLineListener(event -> {
+                if (event.getType() == LineEvent.Type.STOP)
+                    clip.close();
+            });
+
+            clip.open(AudioSystem.getAudioInputStream(file));
+            clip.start();
+        }
+        catch (Exception exc)
+        {
+            exc.printStackTrace(System.out);
+        }
     }
 }
