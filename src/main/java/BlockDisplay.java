@@ -106,23 +106,4 @@ public class BlockDisplay implements KeyListener {
         this.listener = listener;
     }
 
-    public void play(File file)
-    {
-        try
-        {
-            final Clip clip = (Clip) AudioSystem.getLine(new Line.Info(Clip.class));
-
-            clip.addLineListener(event -> {
-                if (event.getType() == LineEvent.Type.STOP)
-                    clip.close();
-            });
-
-            clip.open(AudioSystem.getAudioInputStream(file));
-            clip.start();
-        }
-        catch (Exception exc)
-        {
-            exc.printStackTrace(System.out);
-        }
-    }
 }

@@ -1,3 +1,9 @@
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.Line;
+import javax.sound.sampled.LineEvent;
+import java.io.File;
+
 public class Tetris implements ArrowListener {
     Grid<Block> grid;
     BlockDisplay display;
@@ -169,8 +175,25 @@ public class Tetris implements ArrowListener {
     }
 
     void playSound(Sounds sound) {
-        // TODO
-        System.out.println("Playing sound: " + sound);
+        play(new File("src/main/sounds/" + sound + ".wav"));
     }
 
-}
+    public void play(File file)
+    {
+        try
+        {
+            final Clip clip = (Clip) AudioSystem.getLine(new Line.Info(Clip.class));
+
+            clip.addLineListener(event -> {
+                if (event.getType() == LineEvent.Type.STOP)
+                    clip.close();
+            });
+
+            clip.open(AudioSystem.getAudioInputStream(file));
+            clip.start();
+        }
+        catch (Exception exc)
+        {
+            exc.printStackTrace(System.out);
+        }
+    }}
