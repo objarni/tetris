@@ -52,6 +52,7 @@ public class Tetris implements ArrowListener {
             while (!lost) {
                 boolean next = activeTetrad.translate(1, 0);
                 if (!next) {
+                    playSound(Sounds.BlockHitGround);
                     clearCompletedRows();
                     clearCompletedRows();
                     clearCompletedRows();
