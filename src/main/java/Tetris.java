@@ -164,4 +164,10 @@ public class Tetris implements ArrowListener {
         display.closeWindow();
         System.exit(0);
     }
+
+    void playSound(Sounds sound) {
+        // TODO
+        System.console().printf("Playing sound: %s\n", sound);
+    }
+
 }
