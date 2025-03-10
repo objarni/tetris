@@ -1,7 +1,7 @@
 # tetris
-Tetris implementation written in Java. 
 
-Used in Live Tech Coaching sessions
+Basic Tetris implementation written in Java. 
+
 
 # How to run Tetris?
 
