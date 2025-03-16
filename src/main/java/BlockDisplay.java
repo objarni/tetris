@@ -47,6 +47,7 @@ public class BlockDisplay implements KeyListener {
         showBlocks();
 
         frame.pack();
+        frame.setLocationRelative(null);
         frame.setVisible(true);
 
     }
